@@ -6,15 +6,15 @@ this project would help you get an indepth understanding of class based views in
 
 # How to get started 
 
-## ensure you have the following installed 
+### ensure you have the following installed 
 1. django 5.x+
 2. pillow
 
 ## clone project 
 
-## make migrations and migrate
+### make migrations and migrate
   - python manage.py makemigration
   - python manage.py migrate
 
-## runserver
+### runserver
   - python manage.py runserver 
