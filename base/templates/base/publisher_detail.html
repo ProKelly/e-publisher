@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+
+{% block content %}
+  <h2>Publisher: {{publisher.name}}</h2>
+  <div>
+    <p>Address: {{publisher.address}}</p>
+    <p>City: {{publisher.city}}</p>
+    <p>Country: {{publisher.country}}</p>
+    <p>website: {{publisher.website}}</p>
+  </div>
+
+  <fieldset>
+    <legend>Books</legend>
+    {% for book in publisher.book_set.all %}
+    <div>
+      <p>Title: {{book.title}}</p>
+      <p>Authors: {% for author in book.authors.all  %}
+        {{ author.name }}
+      {% endfor %}</p>
+      <p>Publication Year: {{book.publication_date}}</p>
+    </div>
+    {% endfor %}
+  </fieldset>
+{% endblock content %}

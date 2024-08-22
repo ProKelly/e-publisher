@@ -1,0 +1,10 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+  <h2>Publishers &bot; <a href="{% url 'book-list' %}">Books</a></h2> 
+  <ul>
+    {% for publisher in publishers %}
+        <li><a href="{% url 'publisher-detail' pk=publisher.id %}">{{publisher.name}}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

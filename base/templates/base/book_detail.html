@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+
+{% block content %}
+  <h2>Book: {{book.title}}</h2>
+  <div>
+    <p>Title: {{book.title}}</p>
+    <p>Authors: {% for author in book.authors.all  %}
+      {{ author.name }}
+    {% endfor %}</p>
+    <p>Publication Year: {{book.publication_date}}</p>
+  </div>
+
+  <fieldset>
+    <legend>Authors</legend>
+    {% for author in book.authors.all %}
+    <div>
+      <p>Salutation: {{author.salutation}}</p>
+      <p>Name: {{author.name}}</p>
+      <p>Email: {{author.email}}</p>
+      <img src="{{author.headshot.url}}" alt="author headshot">
+    </div>
+    {% endfor %}
+  </fieldset>
+{% endblock content %}
